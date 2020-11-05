@@ -3,7 +3,6 @@
 ///Date: 11/3/2020
 ///Description: 2D player controller
 //////////////////////
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -67,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = Scaler;
 
     }
-    
+
     // If the player collides with a GameObject w/ the "Ground" tag, reset their jump.
     private void OnCollisionEnter2D(Collision2D col)
     {

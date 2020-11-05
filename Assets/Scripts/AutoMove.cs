@@ -21,9 +21,13 @@ public class AutoMove : MonoBehaviour
 
     Rigidbody2D myRB;
 
-
+    void Start()
+    {
+        myRB = GetComponent<Rigidbody2D>();
+    }
+    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Direction)
         {
@@ -35,8 +39,8 @@ public class AutoMove : MonoBehaviour
             {
                 direction = 1;
             }
-            movement = Vector3.right * direction * MoveSpeed * Time.deltaTime;
-            transform.Translate(movement); 
+            movement = Vector3.right * direction * MoveSpeed;
+            myRB.velocity = movement; 
         }
         else
         {
@@ -48,8 +52,9 @@ public class AutoMove : MonoBehaviour
             {
                 direction = 1;
             }
-            movement = Vector3.up * direction * MoveSpeed * Time.deltaTime;
-            transform.Translate(movement);
+            movement = Vector3.up * direction * MoveSpeed;
+            myRB.velocity = movement;
+
         }
     }
 

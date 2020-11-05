@@ -17,7 +17,8 @@ public class GlobalVarStorage : MonoBehaviour
     public static bool levelOnGoing = false;
     // A var that can be changed depending on where you want the object that the camera is following to be moving towards
     public static Vector3 CameraMoveTowards;
-
+    // Keeps the direction of the player
+    public static Vector3 PlayerDirection;
 
 
     // Start is called before the first frame update
@@ -31,4 +32,5 @@ public class GlobalVarStorage : MonoBehaviour
     {
         
     }
+
 }

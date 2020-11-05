@@ -72,12 +72,21 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // If the player collides with a GameObject w/ the "Ground" tag, reset their jump.
+    // If the player collides with a GameObject w/ the "Ground" tag, reset their jump. Or if the tag is "Balloon" then destroy it and add score
     private void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Ground")
         {
             OnGround = true;
+        } 
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Balloon"))
+        {
+            
+            Destroy(other.gameObject);
         }
     }
 }

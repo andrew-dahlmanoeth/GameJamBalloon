@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public float Speed = 5;
     [Tooltip("Amount of force the player jumps with")]
     public float JumpForce = 500;
+    [Tooltip("A list of things to do when we jump")]
+    public UnityEvent OnJump = new UnityEvent();
     private Vector3 Jump;
     private float MoveInput;
 
@@ -41,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         {
             // Add an upward force
             myRB.AddForce(Jump * JumpForce, ForceMode2D.Impulse);
+            // Spawn in a sound and maybe a particle system for jump?
+            OnJump.Invoke();
             OnGround = false;
         }
 

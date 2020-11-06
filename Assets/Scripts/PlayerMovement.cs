@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public float Speed = 5;
     [Tooltip("Amount of force the player jumps with")]
     public float JumpForce = 500;
+    public float FallMultiplier = 2.5f;
+    public float LowJumpMultiplier = 2.5f;
     [Tooltip("A list of things to do when we jump")]
     public UnityEvent OnJump = new UnityEvent();
     private Vector3 Jump;
@@ -39,6 +41,17 @@ public class PlayerMovement : MonoBehaviour
         MoveInput = Input.GetAxisRaw("Horizontal");
         myRB.velocity = new Vector2(MoveInput * Speed, myRB.velocity.y);
 
+        // If we are falling...
+        if(myRB.velocity.y < 0)
+        {
+            // Add fall multiplier
+            myRB.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
+        } 
+        else if(myRB.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+
+        }
+
         // Detect when player presses W (jump)
         if(Input.GetKeyDown(KeyCode.W) && OnGround == true)
         {
@@ -58,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
+
     }
     // Used to flip direction of player when direction change occurs
     void Flip()
@@ -72,15 +86,26 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // If the player collides with a GameObject w/ the "Ground" tag, reset their jump. Or if the tag is "Balloon" then destroy it and add score
+    // Gets called when we collide with an object
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground")
+        if(col.gameObject.name.Equals ("Ground"))
         {
+            // Make the player become the platforms child
+            this.transform.parent = col.transform;
             OnGround = true;
         } 
         
     }
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if(col.gameObject.name.Equals ("Ground"))
+        {
+            this.transform.parent = null;
+        }
+    }
+
+    // If the tag is "Balloon" then destroy it and add score
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Balloon"))

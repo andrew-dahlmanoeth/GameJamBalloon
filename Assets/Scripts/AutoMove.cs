@@ -35,7 +35,7 @@ public class AutoMove : MonoBehaviour
             {
                 direction = -1;
             }
-            else if(transform.position.x < -MoveLength)
+            else if(transform.position.x < (-MoveLength))
             {
                 direction = 1;
             }
@@ -48,7 +48,7 @@ public class AutoMove : MonoBehaviour
             {
                 direction = -1;
             }
-            else if(transform.position.y < -MoveLength)
+            else if(transform.position.y < (-MoveLength))
             {
                 direction = 1;
             }

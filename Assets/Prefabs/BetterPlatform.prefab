@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3917528868302134640}
   - component: {fileID: 6640926785679441588}
   - component: {fileID: 3256210316461449321}
+  - component: {fileID: 8566157321543095368}
   m_Layer: 0
   m_Name: BetterPlatform
   m_TagString: Ground
@@ -128,3 +129,24 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 1
   m_SideArc: 1
+--- !u!50 &8566157321543095368
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3256210316461449320}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += CoinValue;
 
-        text.text = "Ballons: " + score.ToString();
+        text.text = "Balloons: " + score.ToString();
     }
 
 

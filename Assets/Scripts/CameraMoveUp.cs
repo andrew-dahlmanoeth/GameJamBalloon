@@ -23,7 +23,7 @@ public class CameraMoveUp : MonoBehaviour
     {
         GlobalVarStorage.levelOnGoing = true;
 
-        GlobalVarStorage.CameraMoveTowards = new Vector3(4, 4, 0);
+        
     }
 
 

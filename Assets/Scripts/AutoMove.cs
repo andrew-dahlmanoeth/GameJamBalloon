@@ -35,12 +35,12 @@ public class AutoMove : MonoBehaviour
             {
                 direction = -1;
             }
-            else if(transform.position.x < -MoveLength)
+            else if(transform.position.x < (-MoveLength))
             {
                 direction = 1;
             }
             movement = Vector3.right * direction * MoveSpeed;
-            myRB.velocity = movement; 
+            transform.Translate(movement * Time.deltaTime);
         }
         else
         {
@@ -48,14 +48,15 @@ public class AutoMove : MonoBehaviour
             {
                 direction = -1;
             }
-            else if(transform.position.y < -MoveLength)
+            else if(transform.position.y < (-MoveLength))
             {
                 direction = 1;
             }
             movement = Vector3.up * direction * MoveSpeed;
-            myRB.velocity = movement;
+            transform.Translate(movement * Time.deltaTime);
 
         }
     }
+    
 
 }

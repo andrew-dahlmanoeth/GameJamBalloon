@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
     }
+    
     // Used to flip direction of player when direction change occurs
     void Flip()
     {
@@ -72,15 +73,27 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // If the player collides with a GameObject w/ the "Ground" tag, reset their jump. Or if the tag is "Balloon" then destroy it and add score
-    private void OnCollisionEnter2D(Collision2D col)
+    // If the player collides with a GameObject w/ the right tag, reset their jump
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(col.gameObject.tag == "Ground")
+        if(collision.gameObject.CompareTag("MovingPlatform") | collision.gameObject.CompareTag("Ground"))
         {
+            transform.SetParent(collision.transform);
+            // Reset jump
             OnGround = true;
         } 
         
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(null);
+        } 
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Balloon"))

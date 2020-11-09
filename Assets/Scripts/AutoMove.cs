@@ -12,9 +12,10 @@ public class AutoMove : MonoBehaviour
     [Tooltip("Speed at which the GameObject moves")]
     public float MoveSpeed = 5.0f;
     [Tooltip("How far the object moves from its' origin")]
-    public float MoveLength = 5.0f;
+    public float MoveLength = 1.0f;
     [Tooltip("For left/right movement set to true, for up/down movement set to false")]
     public bool Direction = true;
+    private Vector3 StartPos;
     private int direction = 1;
     Vector3 movement;
     Vector3 StartPosition;
@@ -24,6 +25,7 @@ public class AutoMove : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
+        StartPos = transform.position;
     }
     
     // Update is called once per frame
@@ -31,16 +33,16 @@ public class AutoMove : MonoBehaviour
     {
         if(Direction)
         {
-            if(transform.position.x > MoveLength)
+            if(transform.position.x > StartPos.x + MoveLength)
             {
                 direction = -1;
             }
-            else if(transform.position.x < -MoveLength)
+            else if(transform.position.x < StartPos.x - MoveLength)
             {
                 direction = 1;
             }
             movement = Vector3.right * direction * MoveSpeed;
-            myRB.velocity = movement; 
+            transform.Translate(movement * Time.deltaTime);
         }
         else
         {
@@ -48,14 +50,15 @@ public class AutoMove : MonoBehaviour
             {
                 direction = -1;
             }
-            else if(transform.position.y < -MoveLength)
+            else if(transform.position.y < (-MoveLength))
             {
                 direction = 1;
             }
             movement = Vector3.up * direction * MoveSpeed;
-            myRB.velocity = movement;
+            transform.Translate(movement * Time.deltaTime);
 
         }
     }
+    
 
 }

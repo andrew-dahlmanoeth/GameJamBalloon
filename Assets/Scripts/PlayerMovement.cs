@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public float JumpForce = 500;
     [Tooltip("A list of things to do when we jump")]
     public UnityEvent OnJump = new UnityEvent();
+    public float FallMultiplier = 2.5f;
+    public float LowJumpMultiplier = 2;
+
     private Vector3 Jump;
     private float MoveInput;
 
@@ -43,10 +46,20 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W) && OnGround == true)
         {
             // Add an upward force
-            myRB.AddForce(Jump * JumpForce, ForceMode2D.Impulse);
+            // myRB.AddForce(Jump * JumpForce, ForceMode2D.Impulse);
+            myRB.velocity = Vector2.up * JumpForce;
             // Spawn in a sound and maybe a particle system for jump?
             OnJump.Invoke();
             OnGround = false;
+        }
+
+        if(myRB.velocity.y < 0)
+        {
+            myRB.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
+        }
+        else if(myRB.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            myRB.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.deltaTime;
         }
 
         // Flip the player sprite if direction changes

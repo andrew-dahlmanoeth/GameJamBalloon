@@ -13,7 +13,7 @@ public class Balloon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger");
+        
         if(other.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.ChangeScore(CoinValue);

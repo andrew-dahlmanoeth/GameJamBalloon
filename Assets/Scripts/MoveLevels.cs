@@ -17,8 +17,12 @@ public class MoveLevels : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(newLevel);
+            NextLevel();
         }
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(newLevel);
+    }
 }

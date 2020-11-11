@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Player speed - left/right")]
     public float Speed = 5;
     [Tooltip("Amount of force the player jumps with")]
-    public float JumpForce = 500;
+    public float JumpForce = 10;
     [Tooltip("A list of things to do when we jump")]
     public UnityEvent OnJump = new UnityEvent();
     public float FallMultiplier = 2.5f;
@@ -89,12 +89,16 @@ public class PlayerMovement : MonoBehaviour
     // If the player collides with a GameObject w/ the right tag, reset their jump
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("MovingPlatform") | collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("MovingPlatform"))
         {
             transform.SetParent(collision.transform);
             // Reset jump
             OnGround = true;
-        } 
+        }
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            OnGround = true;
+        }
         
     }
 

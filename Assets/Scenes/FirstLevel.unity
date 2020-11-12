@@ -2153,7 +2153,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882243295}
+  - component: {fileID: 1882243296}
   - component: {fileID: 1882243294}
+  - component: {fileID: 1882243297}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -2188,6 +2190,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882243296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882243293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277b781e868092b4eaaf3707690d5b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1882243297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882243293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566fc7dbacb5af44cb9b08e1b3d570a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1938999877
 PrefabInstance:
   m_ObjectHideFlags: 0

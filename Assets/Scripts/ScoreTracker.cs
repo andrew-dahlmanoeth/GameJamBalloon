@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ScoreTracker : MonoBehaviour
 {
-    public int score;
-    public int balloons;
+    public static int score;
+    public static int balloons;
 
 
 
     void Start()
     {
         score = PlayerPrefs.GetInt("Player Score");
-
+        balloons = score;
 
     }
 

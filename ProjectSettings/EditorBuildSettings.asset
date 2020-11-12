@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondLevel.unity
     guid: 46b6a9e780fbbe64690f5d5fb615f986
+  - enabled: 1
+    path: Assets/Scenes/LevelOneCompletedScreen.unity
+    guid: 2d6646b256680434799690de47a40865
   m_configObjects: {}

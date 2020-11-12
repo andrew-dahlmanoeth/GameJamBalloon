@@ -2370,6 +2370,11 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.75686276
       objectReference: {fileID: 0}
+    - target: {fileID: 1672232150871337159, guid: baa348a0539ea3b4681c4aa44e49dcb1,
+        type: 3}
+      propertyPath: newLevel
+      value: LevelOneCompletedScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa348a0539ea3b4681c4aa44e49dcb1, type: 3}
 --- !u!1001 &2434688695754139055

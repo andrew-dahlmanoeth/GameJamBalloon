@@ -6,10 +6,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Balloon : MonoBehaviour
 {
     public int CoinValue = 1;
+    public UnityEvent OnCollect;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +19,7 @@ public class Balloon : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.ChangeScore(CoinValue);
+            OnCollect.Invoke();
         }
     }
 

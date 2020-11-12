@@ -405,6 +405,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTransitionSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 1672232150871337158, guid: baa348a0539ea3b4681c4aa44e49dcb1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.46666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672232150871337158, guid: baa348a0539ea3b4681c4aa44e49dcb1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
     - target: {fileID: 1672232150871337159, guid: baa348a0539ea3b4681c4aa44e49dcb1,
         type: 3}
       propertyPath: newLevel
@@ -756,6 +766,11 @@ PrefabInstance:
     - target: {fileID: 2793926595136015372, guid: b1b4278027331ec499da076cdfd74b54,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2793926595136015373, guid: b1b4278027331ec499da076cdfd74b54,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1311,7 +1326,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.46666667, g: 0.75686276, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -12,7 +12,14 @@ public class LoadLevelOne : MonoBehaviour
 {
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(WaitBeforeStart());
+
+        
     }
 
+    IEnumerator WaitBeforeStart()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(1);
+    }
 }

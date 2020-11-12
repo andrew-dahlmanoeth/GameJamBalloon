@@ -432,7 +432,6 @@ GameObject:
   m_Component:
   - component: {fileID: 114116167}
   - component: {fileID: 114116166}
-  - component: {fileID: 114116168}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -467,18 +466,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114116168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114116165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566fc7dbacb5af44cb9b08e1b3d570a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &550489277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,6 +1288,7 @@ GameObject:
   - component: {fileID: 1764154481}
   - component: {fileID: 1764154485}
   - component: {fileID: 1764154484}
+  - component: {fileID: 1764154486}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1398,6 +1386,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+--- !u!114 &1764154486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764154480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566fc7dbacb5af44cb9b08e1b3d570a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1834047491
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,10 +17,12 @@ public class MoveLevels : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            ScoreTracker.score = ScoreTracker.balloons;
-            PlayerPrefs.SetInt("Player Score", ScoreTracker.score);
-            SceneManager.LoadScene(newLevel);
+            NextLevel();
         }
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(newLevel);
+    }
 }

@@ -3,7 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleCloudMove : MonoBehaviour
-{
+{  
+    [Tooltip("Minimum number the GameObject may be scaled to")]
+    public float ScaleRangeLow = 5.0f;
+    [Tooltip("Maximum number the GameObject may be scaled to")]
+    public float ScaleRangeHigh = 12.0f;
+    [Tooltip("Minimum speed the GameObject may move at")]
+    public float SpeedRangeLow = 0.5f;
+    [Tooltip("Maximum speed the GameObject may move at")]
+    public float SpeedRangeHigh = 3.0f;
     private float num;
     private float MoveSpeed = 0;
     private int direction = 1;
@@ -14,12 +22,12 @@ public class TitleCloudMove : MonoBehaviour
     void NewCloud()
     {
         // Set speed in range of -4 to -1, or 1 to 4
-        while(MoveSpeed < 0.5f && MoveSpeed > -0.5f)
+        while(MoveSpeed < SpeedRangeLow && MoveSpeed > -SpeedRangeLow)
         {
-            MoveSpeed = Random.Range(-3.0f, 3.0f);
+            MoveSpeed = Random.Range(-SpeedRangeHigh, SpeedRangeHigh);
         }
         // Set random scale
-        num = Random.Range(5.0f, 12.0f);
+        num = Random.Range(ScaleRangeLow, ScaleRangeHigh);
         transform.localScale = new Vector3(num,num,num);
 
     }

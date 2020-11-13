@@ -38,11 +38,4 @@ public class Health : MonoBehaviour
         }
     }
 
-    void OnCollisioEnter2D()
-    {
-        if(collision.gameObject.CompareTag("Bee"))
-        {
-            CurrentHealth -= 10
-        }
-    }
 }

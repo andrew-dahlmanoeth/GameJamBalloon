@@ -15,6 +15,8 @@ public class AutoMove : MonoBehaviour
     public float MoveLength = 1.0f;
     [Tooltip("For left/right movement set to true, for up/down movement set to false")]
     public bool Direction = true;
+    [Tooltip("True for right, false for left")]
+    public bool LeftOrRight = true;
     private Vector3 StartPos;
     private int direction = 1;
     Vector3 movement;
@@ -41,8 +43,16 @@ public class AutoMove : MonoBehaviour
             {
                 direction = 1;
             }
-            movement = Vector3.right * direction * MoveSpeed;
-            transform.Translate(movement * Time.deltaTime);
+            if(LeftOrRight)
+            {
+                movement = Vector3.right * direction * MoveSpeed;
+                transform.Translate(movement * Time.deltaTime);
+            }
+            else
+            {
+                movement = Vector3.left * direction * MoveSpeed;
+                transform.Translate(movement * Time.deltaTime);   
+            }
         }
         else
         {

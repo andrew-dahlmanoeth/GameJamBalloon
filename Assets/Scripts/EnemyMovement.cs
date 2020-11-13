@@ -26,12 +26,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft += Time.deltaTime;
+        timeLeft -= Time.deltaTime;
 
-        if(timeLeft >= waitTime)
+        if(timeLeft <= 0)
         {
             movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-            timeLeft = 0;
+            timeLeft += waitTime;
         }
 
     }

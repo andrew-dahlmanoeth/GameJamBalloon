@@ -37,12 +37,15 @@ public class Health : MonoBehaviour
             }
         }
     }
-
-    void OnCollisioEnter2D()
+    // Start is called before the first frame update
+    void Start()
     {
-        if(collision.gameObject.CompareTag("Bee"))
-        {
-            CurrentHealth -= 10
-        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

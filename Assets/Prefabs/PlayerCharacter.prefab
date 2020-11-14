@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1025984738179581494}
   - component: {fileID: 1025984738179581489}
   - component: {fileID: 1025984738179581490}
+  - component: {fileID: -6787646281799960542}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -194,4 +195,30 @@ MonoBehaviour:
   DestroyAtZero: 1
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6787646281799960542}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6787646281799960542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025984738179581483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5599252efbd3444fa55b5ad833954fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsToSpawn:
+  - {fileID: 1276816380800902400, guid: 951734c4602828d49a8c3b4dbd5c177a, type: 3}
+  - {fileID: 3811815674031740147, guid: 23f816cba3d694c428da816a9ee5da4b, type: 3}

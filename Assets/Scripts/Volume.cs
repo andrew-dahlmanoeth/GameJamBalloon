@@ -12,4 +12,6 @@ public class Volume : MonoBehaviour
     {
         mixer.SetFloat("MasterVolume", Mathf.Log(Volume) * 20);
     }
+
+
 }

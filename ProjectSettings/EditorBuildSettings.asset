@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SimTest.unity
-    guid: 37841545ecd2a66408e715c8ade10838
+    path: Assets/Scenes/AndrewTest.unity
+    guid: efffe7cb35161db4dae9d72326cdcbff
   - enabled: 1
     path: Assets/Scenes/FirstLevel.unity
     guid: 76b0ff4f3b2be6447a74b0dc86210aad
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: 2d7e4e7dc357eb7499262573a5557f8e
+    path: Assets/Scenes/SecondLevel.unity
+    guid: 46b6a9e780fbbe64690f5d5fb615f986
+  - enabled: 1
+    path: Assets/Scenes/LevelOneCompletedScreen.unity
+    guid: 2d6646b256680434799690de47a40865
   m_configObjects: {}

@@ -17,21 +17,26 @@ public class Menu : MonoBehaviour
     void Start() 
     {
         PauseMenu.SetActive(false);
+        OptionsMenu.SetActive(false);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(!OptionsMenu.activeSelf)
         {
-            if(GamePaused)
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+                if(GamePaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }            
         }
+
     }
 
     public void Resume()
@@ -58,5 +63,11 @@ public class Menu : MonoBehaviour
     {
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(true);
+    }
+
+    public void Back()
+    {
+        PauseMenu.SetActive(true);
+        OptionsMenu.SetActive(false);
     }
 }

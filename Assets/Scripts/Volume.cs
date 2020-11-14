@@ -10,6 +10,6 @@ public class Volume : MonoBehaviour
     
     public void SetVolume(float Volume)
     {
-        mixer.SetFloat("MasterVol", Volume);
+        mixer.SetFloat("MasterVolume", Mathf.Log(Volume) * 20);
     }
 }

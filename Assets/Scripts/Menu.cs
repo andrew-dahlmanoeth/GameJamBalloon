@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
 {
     public static bool GamePaused = false;
     public GameObject PauseMenu;
+    public GameObject OptionsMenu;
 
     void Start() 
     {
@@ -51,5 +52,11 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        PauseMenu.SetActive(false);
+        OptionsMenu.SetActive(true);
     }
 }

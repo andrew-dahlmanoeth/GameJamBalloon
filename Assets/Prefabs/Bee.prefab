@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 9051420736119737027}
   - component: {fileID: 9051420736119737024}
   - component: {fileID: -8172369416187396786}
+  - component: {fileID: 351447187637521190}
+  - component: {fileID: 4935142347412618292}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +138,7 @@ MonoBehaviour:
   MoveSpeed: 2
   MoveLength: 3
   Direction: 1
+  LeftOrRight: 1
 --- !u!61 &-8172369416187396786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +165,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &351447187637521190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051420736119737028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adeeeaec6d6695a4092d2c1de514866e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 34
+  DestroyOnCollide: 1
+  OnCollide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4935142347412618292}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4935142347412618292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051420736119737028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ac4e646f9babd438582fcb019a3383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsToSpawn:
+  - {fileID: 7845343917943900706, guid: 16f124fce74683c4c84ce1ba30c9fe1b, type: 3}
